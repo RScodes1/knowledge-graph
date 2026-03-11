@@ -7,7 +7,8 @@ import {
   useEdgesState,
   Node,
   Edge,
-  addEdge
+  addEdge,
+  Position
 } from "reactflow"
 import "reactflow/dist/style.css"
 import NodeSidebar from "./NodeSidebar"
@@ -45,8 +46,8 @@ const addNode = (title: string, note: string) => {
       title,
       note
     },
-    sourcePosition: "right",
-    targetPosition: "left",
+   sourcePosition: Position.Right,
+     targetPosition: Position.Left,
     style: {
       animation: "fadeIn 0.3s ease"
 }
