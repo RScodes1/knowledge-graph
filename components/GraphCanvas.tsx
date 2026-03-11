@@ -17,7 +17,7 @@ import AddNodeDialog from "./AddNodeDialog"
 import { loadGraph } from "@/lib/storage"
 import { saveGraph } from "@/lib/storage"
 import { loadGraphFromCSV } from "@/lib/graphLoader"
-import { graphNodesToRF, graphEdgesToRF } from "@/lib/graphMapper"
+import { graphNodesToRF, graphEdgesToRF, rfNodesToGraph, rfEdgesToGraph  } from "@/lib/graphMapper"
 
 export default function GraphCanvas() {
 
@@ -123,7 +123,10 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  saveGraph({ nodes, edges })
+   saveGraph({
+    nodes: rfNodesToGraph(nodes),
+    edges: rfEdgesToGraph(edges)
+  })
 }, [nodes, edges])
 
 return (

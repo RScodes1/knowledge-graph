@@ -23,3 +23,20 @@ export function graphEdgesToRF(edges: GraphEdge[]): Edge[] {
     label: e.label
   }))
 }
+
+export function rfNodesToGraph(nodes: Node[]): GraphNode[] {
+  return nodes.map((n) => ({
+    id: n.id,
+    title: n.data.title,
+    note: n.data.note
+  }))
+}
+
+export function rfEdgesToGraph(edges: Edge[]): GraphEdge[] {
+  return edges.map((e) => ({
+    id: e.id,
+    source: e.source,
+    target: e.target,
+    label: String(e.label ?? "")
+  }))
+}
