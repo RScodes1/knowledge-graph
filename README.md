@@ -7,13 +7,13 @@ Follow the steps below to run the project on your local machine.
 ### 1. Clone the Repository
 
 ```bash
-git clone 
-cd knowgraph
+git clone https://github.com/RScodes1/knowledge-graph.git
+cd knowledge-graph
 ```
 
 ### 2. Install Dependencies
 
-Make sure you have **Node.js (v18 or later)** installed.
+Make sure you have **Node.js (v20 or later)** installed.
 
 Then install the project dependencies:
 
