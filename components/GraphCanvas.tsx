@@ -123,10 +123,8 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-   saveGraph({
-    nodes: rfNodesToGraph(nodes),
-    edges: rfEdgesToGraph(edges)
-  })
+   saveGraph({  nodes: rfNodesToGraph(nodes), edges: rfEdgesToGraph(edges) })
+  
 }, [nodes, edges])
 
 return (

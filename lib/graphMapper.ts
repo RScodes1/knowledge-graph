@@ -9,7 +9,7 @@ export function graphNodesToRF(nodes: GraphNode[]): Node[] {
       title: n.title,
       note: n.note
     },
-    position: { x: 0, y: 0 },
+    position: n.position,
     sourcePosition: Position.Right,
     targetPosition: Position.Left
   }))
@@ -28,10 +28,10 @@ export function rfNodesToGraph(nodes: Node[]): GraphNode[] {
   return nodes.map((n) => ({
     id: n.id,
     title: n.data.title,
-    note: n.data.note
+    note: n.data.note,
+    position: n.position
   }))
 }
-
 export function rfEdgesToGraph(edges: Edge[]): GraphEdge[] {
   return edges.map((e) => ({
     id: e.id,
