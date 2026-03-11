@@ -10,13 +10,14 @@ import {
   Position
 } from "reactflow"
 import "reactflow/dist/style.css"
-
+ 
 import NodeSidebar from "./NodeSidebar"
 import AddNodeDialog from "./AddNodeDialog"
 
 import { loadGraph } from "@/lib/storage"
 import { saveGraph } from "@/lib/storage"
 import { loadGraphFromCSV } from "@/lib/graphLoader"
+import { graphNodesToRF, graphEdgesToRF } from "@/lib/graphMapper"
 
 export default function GraphCanvas() {
 
@@ -106,8 +107,8 @@ useEffect(() => {
     const saved = loadGraph()
 
     if (saved) {
-      setNodes(saved.nodes)
-      setEdges(saved.edges)
+      setNodes(graphNodesToRF(saved.nodes))
+      setEdges(graphEdgesToRF(saved.edges))
       return
     }
 
