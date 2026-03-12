@@ -1,7 +1,12 @@
 import { useState } from "react"
 import { HelpCircle } from "lucide-react"
 
-export default function GraphNavbar({ nodeCount, edgeCount }) {
+type Props = {
+    nodeCount: number | null
+    edgeCount: number | null
+}
+
+export default function GraphNavbar({ nodeCount, edgeCount }: Props) {
 
      const [helpOpen, setHelpOpen] = useState(false)
 
